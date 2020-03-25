@@ -27,6 +27,25 @@
             <section class="panel-section help-row">
                 Allows you to temporarily disable all reminders until you restart Firefox. Running this mode for extended periods of time may leave you vulnerable to permanent eye damage.
             </section>
+			<section class="panel-section">
+                <label>Play Sound on Appearance </label>
+				<div>
+					<label><input type="radio" name="playAppearanceSound" value="0"> Inactive</label>
+					<label><input type="radio" name="playAppearanceSound" value="1"> Active</label>
+                </div>
+				</select>
+            </section>
+            <section class="panel-section has-help">
+                <label>Timer End Sound Enabled</label>
+                <div>
+                    <label><input type="radio" name="playTimerEndSound" value="0"> Inactive</label>
+                    <label><input type="radio" name="playTimerEndSound" value="1"> Active</label>
+                </div>
+            </section>
+            <section class="panel-section help-row">
+                This option will enable a sound to play after the 20 second timer ends, letting 
+              you know you can return to the monitor. 
+            </section>
         </form>
         <script src="options.js"></script>
     </body>

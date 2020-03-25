@@ -22,7 +22,16 @@ function saveOptions() {
         chrome.runtime.sendMessage('enabletimer');
         isDisabled = false;
     }
-}
+	
+	// Play Sound on Appearance setting
+	browser.storage.local.set({
+		'playSoundOnAppearance' : parseInt(document.settings.playAppearanceSound.value)
+	});
+	
+	// Play sound on 20 Sec Timer End
+	browser.storage.local.set({
+		'playSoundOnAppearance' : parseInt(document.settings.playTimerEndSound.value)
+	});
 
 // Prefill saved settings into option page
 function restoreOptions() {
