@@ -23,9 +23,13 @@ function start() {
 // Handle 20s countdown end
 function timerTrigger(alarmInfo) {
     if (alarmInfo.name == 'countdown') {
-        // Play alert sound
-        document.getElementById('audio').play();
-        
+		browser.storage.local.get('playSoundOnTimerEnd', (res) => {
+            if (res.playSoundOnTimerEnd == 1) {
+                // Play alert sound
+				document.getElementById('audio').play();
+            }
+        });
+
         // Update GUI
         document.body.className = 'blinking';
         document.getElementById('complete').disabled = false;

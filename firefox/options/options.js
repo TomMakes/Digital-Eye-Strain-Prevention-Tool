@@ -30,7 +30,7 @@ function saveOptions() {
 	
 	// Play sound on 20 Sec Timer End
 	browser.storage.local.set({
-		'playSoundOnAppearance' : parseInt(document.settings.playTimerEndSound.value)
+		'playSoundOnTimerEnd' : parseInt(document.settings.playTimerEndSound.value)
 	});
 
 // Prefill saved settings into option page
@@ -45,6 +45,14 @@ function restoreOptions() {
         if (res.tempDisabled == 1) {
             isDisabled = true;
         }
+    });
+	// Play Sound on Appearance setting
+	browser.storage.local.get('playSoundOnAppearance', (res) => {
+        document.settings.playAppearanceSound.value = res.playSoundOnAppearance;
+    });
+	// Play sound on 20 Sec Timer End
+	browser.storage.local.get('playSoundOnTimerEnd', (res) => {
+        document.settings.playTimerEndSound.value = res.playSoundOnTimerEnd;
     });
 }
 
